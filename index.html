@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+
+    <title>SingAug Demo Page</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <!--<link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<link href="bootstrap/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">-->
+    <link href="https://maxcdn.bootstrapcdn.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="poster.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="bootstrap/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--<script src="bootstrap/assets/js/ie-emulation-modes-warning.js"></script>-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="container"> 
+
+      <div class="page-header">
+        <h1>
+          SingAug: Data Augmentation for Singing Voice Synthesis with Cycle-consistent Training Strategy
+        </h1> 
+        <p class="centered">
+          Authors: Shuai Guo*, Jiatong Shi*, Tao Qian, Shinji Watanabe, Qin Jin (* Equal contribution.)
+        </p>
+        <p class="centered">
+          Contact: {shuaiguo, qiantao, qjin}@ruc.edu.cn, jiatongs@cs.cmu.edu, shinjiw@ieee.org
+        </p>
+        <p class="lead">
+          <a class="lead_link" href="https://arxiv.org/abs/2203.17001">[arXiv preprint]</a>
+        </p>
+        <p class="centered">Presented at INTERSPEECH 2022</p>
+      </div>
+
+      <h3>Abstract</h3>
+      <p>Deep learning based singing voice synthesis (SVS) systems have been demonstrated to flexibly generate singing with better qualities, compared to conventional statistical parametric based methods. 
+        However, neural systems are generally datahungry and have difficulty to reach reasonable singing quality with limited public available training data. In this work, we
+        explore different data augmentation methods to boost the training of SVS systems, including several strategies customized to
+        SVS based on pitch augmentation and mix-up augmentation. To further stabilize the training, we introduce the cycle-consistent
+        training strategy. Extensive experiments on two public singing databases demonstrate that our proposed augmentation methods
+        and the stabilizing training strategy can significantly improve the performance on both objective and subjective evaluations.
+      </p>
+
+      <center><img src="images/model.png" height="100%" width="100%"></center>
+      
+      <h3>Singing Demo - Ofuton Dataset (Japanese Songs)</h3>
+      <div class="row">
+        <div class="col-md-2">/</div>
+        <div class="col-md-2">Sample 1</div>
+        <div class="col-md-2">Sample 2</div>
+        <div class="col-md-2">Sample 3</div>
+        <div class="col-md-2">Sample 4</div>
+        <div class="col-md-2">Sample 5</div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">Baseline</div>
+        <div class="col-md-2"><audio src="audios/ofuton/1_baseline.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/ofuton/4_baseline.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/ofuton/5_baseline.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/ofuton/7_baseline.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/ofuton/11_baseline.wav" controls></audio></div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">PA</div>
+        <div class="col-md-2"><audio src="audios/ofuton/1_PA.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/ofuton/4_PA.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/ofuton/5_PA.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/ofuton/7_PA.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/ofuton/11_PA.wav" controls></audio></div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">MA</div>
+        <div class="col-md-2"><audio src="audios/ofuton/1_MA.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/ofuton/4_MA.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/ofuton/5_MA.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/ofuton/7_MA.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/ofuton/11_MA.wav" controls></audio></div>
+
+      </div>
+      <div class="row">
+        <div class="col-md-2">PA + MA</div>
+        <div class="col-md-2"><audio src="audios/ofuton/1_PA_MA.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/ofuton/4_PA_MA.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/ofuton/5_PA_MA.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/ofuton/7_PA_MA.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/ofuton/11_PA_MA.wav" controls></audio></div>
+
+      </div>
+      <div class="row">
+        <div class="col-md-2">PA + MA + CC</div>
+        <div class="col-md-2"><audio src="audios/ofuton/1_CC.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/ofuton/4_CC.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/ofuton/5_CC.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/ofuton/7_CC.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/ofuton/11_CC.wav" controls></audio></div>
+        
+      </div>
+      <div class="row">
+        <div class="col-md-2">G.T.</div>
+        <div class="col-md-2"><audio src="audios/ofuton/1_GT.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/ofuton/4_GT.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/ofuton/5_GT.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/ofuton/7_GT.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/ofuton/11_GT.wav" controls></audio></div>
+      </div>
+
+      <h3>.</h3>
+
+      <h3>Singing Demo - Opencpop Dataset (Mandarin Songs)</h3>
+      <div class="row">
+        <div class="col-md-2">/</div>
+        <div class="col-md-2">Sample 1</div>
+        <div class="col-md-2">Sample 2</div>
+        <div class="col-md-2">Sample 3</div>
+        <div class="col-md-2">Sample 4</div>
+        <div class="col-md-2">Sample 5</div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">Baseline</div>
+        <div class="col-md-2"><audio src="audios/opencpop/2_baseline.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/opencpop/3_baseline.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/opencpop/5_baseline.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/opencpop/7_baseline.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/opencpop/13_baseline.wav" controls></audio></div>
+
+      </div>
+      <div class="row">
+        <div class="col-md-2">PA</div>
+        <div class="col-md-2"><audio src="audios/opencpop/2_PA.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/opencpop/3_PA.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/opencpop/5_PA.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/opencpop/7_PA.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/opencpop/13_PA.wav" controls></audio></div>
+
+      </div>
+      <div class="row">
+        <div class="col-md-2">MA</div>
+        <div class="col-md-2"><audio src="audios/opencpop/2_MA.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/opencpop/3_MA.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/opencpop/5_MA.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/opencpop/7_MA.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/opencpop/13_MA.wav" controls></audio></div>
+
+
+      </div>
+      <div class="row">
+        <div class="col-md-2">PA + MA</div>
+        <div class="col-md-2"><audio src="audios/opencpop/2_PA_MA.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/opencpop/3_PA_MA.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/opencpop/5_PA_MA.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/opencpop/7_PA_MA.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/opencpop/13_PA_MA.wav" controls></audio></div>
+        
+
+      </div>
+      <div class="row">
+        <div class="col-md-2">PA + MA + CC</div>
+        <div class="col-md-2"><audio src="audios/opencpop/2_CC.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/opencpop/3_CC.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/opencpop/5_CC.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/opencpop/7_CC.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/opencpop/13_CC.wav" controls></audio></div>
+        
+        
+      </div>
+      <div class="row">
+        <div class="col-md-2">G.T.</div>
+        <div class="col-md-2"><audio src="audios/opencpop/2_GT.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/opencpop/2_GT.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/opencpop/2_GT.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/opencpop/2_GT.wav" controls></audio></div>
+        <div class="col-md-2"><audio src="audios/opencpop/2_GT.wav" controls></audio></div>
+        
+
+      </div>
+      
+
+      <h3>.</h3>
+
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<script src="bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>-->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
